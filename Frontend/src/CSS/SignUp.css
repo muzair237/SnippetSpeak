@@ -1,0 +1,41 @@
+body{
+    background-color: #E4EFE7;
+}
+.form-container{
+    background-color: #FFFAD7;
+    width: 25rem;
+    height: 40rem;
+    border: 2px solid rgb(192, 39, 39);
+    margin: auto;
+    margin-top: 0.8rem;
+    border-radius: 6px;
+}
+.signupText{
+    font-family: 'Lora', serif;
+    text-align: center;
+    color: #333333;
+    font-size: 27px;
+    font-weight: 500;
+}
+form{
+    margin-top: 1.2rem;
+    font-family: 'Lora', serif;
+}
+label{
+    font-weight: 600;
+}
+.submitButton{
+    text-align: center;
+    margin-top: 2rem;
+}
+span{
+    font-size: 14px;
+    color: red;
+}
+span > img{
+    width: 23px;
+}
+.verifyText p{
+    font-size: 11px;
+    text-align: center;
+}

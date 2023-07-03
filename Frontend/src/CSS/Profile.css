@@ -1,0 +1,43 @@
+body{
+    background-color: #E4EFE7;
+}
+.mainText{
+    font-family: 'DM Serif Display', serif;
+    font-weight: 600;
+    font-size: 2.5rem;
+}
+.mainPara {
+    font-family: 'Lora', serif;
+    font-weight : 600;
+    font-size: 1.13rem;
+}
+.profileText h3{
+    font-family: 'DM Serif Display', serif;
+    font-weight: 600;
+    font-size: 2.1rem;
+    text-align: center;
+    margin-top: -15px;
+}
+.profile{
+    margin: auto;
+    background-color: cyan;
+    border: 1px solid black;
+    width: 21rem;
+    height: 25rem;
+    border-radius: 7px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.userImg img{
+    margin-left: 6.5rem;
+    margin-top: 1rem;
+}
+.profileContent{
+    font-family: 'Lora', serif;
+    margin-left: 2rem;
+    
+}
+.profileContent h5{
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1.5rem;
+}

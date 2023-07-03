@@ -1,0 +1,83 @@
+body{
+    background-color: #E4EFE7;
+}
+.mainText{
+    font-family: 'DM Serif Display', serif;
+    font-weight: 600;
+    font-size: 2.5rem;
+}
+.mainPara, .form-label {
+    font-family: 'Lora', serif;
+    font-weight : 600;
+    font-size: 1.13rem;
+}
+hr{
+    color: black;
+    width: 100%;
+}
+.blogsList h3, .notFound{
+    font-family: 'Lora', serif;
+    font-weight : 600;
+    font-size: 1.29rem;
+}
+.blog {
+    border: 1px solid black;
+    border-radius: 9px;
+    height: 23.4rem;
+    width: 25rem;
+    position: relative;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add the box shadow property */
+}
+.badge {
+    position: absolute;
+    top: 0%;
+    right: 0;
+    transform: translateY(-50%);
+    font-size: 14px;
+  }
+
+.identification{
+    font-family: 'Lora', serif;
+}
+.identification h5{
+    font-size: 15px;
+    line-height: 1.3rem;
+}
+.content h4{
+    font-family: 'Lora', serif;
+    font-weight: 600;
+    font-size: 1.2rem;
+    padding-left: 6px;
+    padding-right: 6px;
+}
+.likes h6{
+    font-family: 'Lora', serif;
+    font-weight: 600;
+    padding-left: 6px;
+}
+.content p{
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    padding-left: 6px;
+    padding-right: 5px;
+}
+.likes h6{
+    display: inline-block;
+}
+
+@media (max-width: 576px) {
+    .col{
+        margin: auto;
+    }
+}
+@media (min-width: 576px) and (max-width: 768px) {
+    .col{
+        margin: auto;
+    }
+}
+@media (min-width: 768px) and (max-width: 992px) {
+    .col{
+        margin: auto;
+    }
+}
