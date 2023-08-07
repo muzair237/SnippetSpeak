@@ -1,0 +1,46 @@
+# Node.js and NPM
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+
+# Dependency directories
+/.pnp
+.pnp.js
+
+# Debugging files
+.vscode/
+*.vscode
+*.vscode/*
+*.vscode/tasks.json
+*.vscode/launch.json
+*.vscode/settings.json
+*.vscode/extensions.json
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Build output
+/build
+/dist
+
+# Logs
+*.log
+log/
+logs/
+
+# OS generated files
+Thumbs.db
+.DS_Store
+
+# IDE and editor files
+*.sublime-project
+*.sublime-workspace
+*.idea/
+*.vscode/
+*.swp
+
