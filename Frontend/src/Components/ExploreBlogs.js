@@ -1,24 +1,29 @@
+import { useDispatch, useSelector } from 'react-redux';
 import '../CSS/ExploreBlogs.css';
 import like from '../Images/like.png'
 import React, { useEffect, useState } from 'react';
+import { getAllBlogs } from '../slices/Blogs/thunk';
 
 export default function ExploreBlogs() {
-  const [data, setData] = useState([]);
+  const dispatch = useDispatch();
+  // const [data, setData] = useState([]);
   const [likedBlogs, setLikedBlogs] = useState([]);
-
+  let data = useSelector((state)=> state?.Blogs?.blogs)
+  console.log(data?.data);
   useEffect(() => {
-    getData();
+    // dispatch(getAllBlogs());
+    dispatch(getAllBlogs());
   }, []);
 
-  const getData = async () => {
-    let response = await fetch('http://localhost:3001/getBlog', {
-      headers: {
-        authorization: `bearer ${JSON.parse(localStorage.getItem('auth'))}`
-      }
-    });
-    response = await response.json();
-    setData(response);
-  };
+  // const getData = async () => {
+  //   let response = await fetch('http://localhost:3001/getBlog', {
+  //     headers: {
+  //       authorization: `bearer ${JSON.parse(localStorage.getItem('auth'))}`
+  //     }
+  //   });
+  //   response = await response.json();
+  //   setData(response);
+  // };
   const collectData = async (author, id) => {
     if (likedBlogs.includes(author)) {
       let response = await fetch(`http://localhost:3001/decLikes/${id}`, {
@@ -29,7 +34,7 @@ export default function ExploreBlogs() {
       });
       response = await response.json();
       likedBlogs.splice(likedBlogs.indexOf(author), 1);
-      getData();
+      dispatch(getAllBlogs());
       return;
     } else {
       let response = await fetch(`http://localhost:3001/updateLikes/${id}`, {
@@ -40,7 +45,7 @@ export default function ExploreBlogs() {
       });
       response = await response.json();
       setLikedBlogs([...likedBlogs, author]);
-      getData();
+      dispatch(getAllBlogs());
     }
   };
   const searchHandle = async (event) => {
@@ -53,10 +58,10 @@ export default function ExploreBlogs() {
       });
       data = await data.json();
       if (data) {
-        setData(data);
+        // setData(data);
       }
     } else {
-      getData();
+      dispatch(getAllBlogs());
     }
   }
   return (
@@ -79,8 +84,8 @@ export default function ExploreBlogs() {
       </div>
       <div className="container blogDesign mt-4">
         <div className="row mt-2">
-          {data.length > 0 ?
-            data.map((item, index) => {
+          {data?.data?.length > 0 ?
+            data?.data?.map((item, index) => {
               return (
                 <React.Fragment key={index}>
                   <div className="blog col-sm-12 mx-3 mb-4">
