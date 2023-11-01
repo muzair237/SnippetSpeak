@@ -4,7 +4,7 @@ const router = express.Router();
 const blogModel = require("../db/Schemas/blogSchema");
 router.use(express.json());
 
-router.get("/",verifyToken,async (req, res) => {
+router.get("/",async (req, res) => {
     try {
         let data = await blogModel.find({});
         res.send(data);
