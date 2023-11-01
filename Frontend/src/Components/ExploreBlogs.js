@@ -24,6 +24,7 @@ export default function ExploreBlogs() {
   //   response = await response.json();
   //   setData(response);
   // };
+  
   const collectData = async (author, id) => {
     if (likedBlogs.includes(author)) {
       let response = await fetch(`http://localhost:3001/decLikes/${id}`, {
@@ -48,6 +49,7 @@ export default function ExploreBlogs() {
       dispatch(getAllBlogs());
     }
   };
+
   const searchHandle = async (event) => {
     let key = event.target.value;
     if (key) {

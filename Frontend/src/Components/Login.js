@@ -2,7 +2,11 @@ import '../CSS/Login.css';
 import React, { useEffect, useState } from 'react'
 import warning from '../Images/warning.png'
 import { useNavigate, Link } from 'react-router-dom';
+import { getLogin } from '../slices/Authentication/thunk';
+import { useDispatch } from 'react-redux';
+
 export default function Login() {
+    const dispatch = useDispatch();
 
     const [usernameorEmail, setUsernameorEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -22,21 +26,11 @@ export default function Login() {
             setError("Enter Correct Credentials.");
             return;
         } else {
-            let response = await fetch('http://localhost:3001/login', {
-                method: 'POST',
-                body: JSON.stringify({ usernameorEmail, password }),
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-            });
-            response = await response.json();
-            if (response.auth) {
-                localStorage.setItem("users", JSON.stringify(response.user));
-                localStorage.setItem("auth", JSON.stringify(response.auth));
-                navigate("/");
-            } else {
-                setError(response.errors);
+            const loginInfo = {
+                usernameorEmail: usernameorEmail,
+                password: password
             }
+            dispatch(getLogin({ loginInfo,navigate }));
         }
     }
     return (
